@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pizzalelopizza a pizza ordering website where you can easily customize your pizza, located in many places in united states.">
+<meta name="author" content="CMPE280 Team10">
+<meta name="keyword" content="Pizzalelopizza, Creative, Pizza, Analytics, Food, Bootstrap, Responsive, Retina, Minimal">
+ <link href="css/business-casual.css" rel="stylesheet">
+
+    <title>Pizza Lelo Pizza</title>
+	
+	<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	 -->
+	 
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+	<!-- jQuery -->
+    <script src="js/jquery.js" defer></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js" defer></script>
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    	<!-- angular.js -->
+	 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	 <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	 <script type="text/javascript">
+	function toggle(Info) {
+	  var CState = document.getElementById(Info);
+	  CState.style.display = (CState.style.display != 'block')
+	                       ? 'block' : 'none';
+	}
+	</script>
+	<style type="text/css">
+ .FAQ {
+	cursor: hand;
+	cursor: pointer;
+	border: 1px solid #CCC;
+	text-align:left;
+	width: 700px;
+	margin-top: 20px;
+	padding: 10px;
+	color:#333
+	padding-top:10px;
+	border:3px solid #d4a26f ;
+}
+ .ANS { 
+	display:none;
+	margin-top:7px;
+	color:#fdcc3b;
+}
+img{
+float:right;
+}
+font{
+font-size: 1.0em;
+color:white;
+}
+
+
+
+footer{
+margin-top:30px;
+padding-top:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+<div ng-app="" ng-controller="faqsController">
+<header>
+    <div class="brand">Pizza Lelo Pizza</div>
+    <div class="address-bar">Happy Pizzas To Make Happy Times</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Business Casual</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                 <li>
+                        <a href="#" ng-click="homePage()">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="pizzaPage()">PIZZA</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="buildYourOwnPage()">BUILD YOUR OWN</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="sidesPage()">SIDES</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="dealsPage()">DEALS</a>
+                    </li>
+                   <li>
+                        <a href="#" ng-click="findUsPage()">Find Us</a>
+                    </li>
+                    <li class="dropdown">
+                  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart"></span> <span  id="itemNumber"></span><span class="caret"></span></a>
+                 	<ul class="dropdown-menu" id="theCart" role="menu">
+                    </ul>
+                     </li>
+                        </ul>
+                      
+               
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    </header>
+     
+    <h4 align="center"style="color:#fdcc3b;font-size:2em;padding-bottom:10px;">Frequently Asked Questions</font></h4>
+    
+<div align="center" >
+<div align="center" id="f" style="border:3px solid #d4a26f ; width:60%;" style="padding-bottom:20px;">
+<DIV class="FAQ" onclick="toggle('faq1')">
+ <figcaption style="font-size: 1.20em;color:white"> 1. How do I reset my password if I have lost or forgotten it?<img src="img/arrow.jpg">  </figcaption>
+ <div id="faq1" class="ANS"> <font face="Verdana" size = "2"style="color:#fdcc3b;"> If you forget your password, that's OK! Just click on the "Forgot your password?" link on the Sign In page. </font></div>
+</DIV>
+
+<DIV class="FAQ" onclick="toggle('faq2')">
+ <figcaption style="font-size: 1.20em;color:white"> 2. How will I know when the restaurant received my Internet Order? <img src="img/arrow.jpg"> </figcaption>
+ <div id="faq2" class="ANS"> <font face="Verdana" size = "2"style="color:#fdcc3b;"> Once you submit your order, the Order Confirmation page will show the time your
+ order was received along with an estimated time that your order will be ready for carryout or delivery. You will also receive a confirmation email at the email 
+ address you provided at registration. And if you're still unsure about your order, you can always call the restaurant directly. </font></div>
+</DIV>
+
+<DIV class="FAQ" onclick="toggle('faq3')">
+ <figcaption style="font-size: 1.20em;color:white"> 3. Can I use my coupon online? <img src="img/arrow.jpg"></figcaption>
+ <div id="faq3" class="ANS"> <font face="Verdana" size = "2" style="color:#fdcc3b;"> In most cases you can redeem any valid Pizza Lelo coupon online. </font></div>
+</DIV>
+
+<DIV class="FAQ" onclick="toggle('faq4')">
+ <figcaption style="font-size: 1.20em;color:white"> 4. What payment options are available through Internet Ordering? <img src="img/arrow.jpg"> </figcaption>
+ <div id="faq4" class="ANS"> <font face="Verdana" size = "2" style="color:#fdcc3b;"> We accept cash, Pizza Lelo Gift Cards and eGift Cards, as well 
+ as all major credit cards. </font></div>
+</DIV>
+
+<DIV class="FAQ" onclick="toggle('faq5')">
+ <figcaption style="font-size: 1.20em;color:white"> 5. I can't find what I'm looking for.  Where can I go to ask my question?  <img src="img/arrow.jpg"></figcaption>
+ <div id="faq5" class="ANS"> <font face="Verdana" size = "2" style="color:#fdcc3b;"> If you don't see the answer to your question, please 
+ complete our contact form online or contact our customer satisfaction hotline.</font></div>
+</DIV>
+
+<DIV class="FAQ" onclick="toggle('faq6')">
+ <figcaption style="font-size: 1.20em;color:white"> 6. Can I save my credit card information for future online purchases? <img src="img/arrow.jpg"> </figcaption>
+ <div id="faq6" class="ANS"> <font face="Verdana" size = "2" style="color:#fdcc3b;"> Yes, you can securely save your credit card information to your account. For 
+ security purposes, if you share an account we recommend that you NOT store your credit information online as anyone who has access to your username and 
+ password could charge Pizza Lelo purchases to the card without your knowledge. To manage your account, just click on "My Account" at the top of the page. 
+ </font></div>
+</DIV>
+
+<DIV class="FAQ" onclick="toggle('faq7')">
+ <figcaption style="font-size: 1.20em;color:white"> 7. Can I use Pizza Lelo Gift Cards and eGift Cards for online purchases?  <img src="img/arrow.jpg"></figcaption>
+ <div id="faq7" class="ANS"> <font face="Verdana" size = "2" style="color:#fdcc3b;">Once you've signed in to the site with your username and password, select
+ "My Account" from the navigation menu. You can change your account information there.</font> </div>
+ </DIV>
+
+<DIV class="FAQ" onclick="toggle('faq8')">
+ <figcaption style="font-size: 1.20em;color:white"> 8. Where can I change my account info?  <img src="img/arrow.jpg"></figcaption>
+ <div id="faq8" class="ANS"> <font face="Verdana" size = "2" style="color:#fdcc3b;">Once you've signed in to the site with your username and password, select 
+ "My Account" from the navigation menu. You can change your account information there. </font></div>
+ </DIV>
+
+<DIV class="FAQ" onclick="toggle('faq9')">
+ <figcaption style="font-size: 1.20em;color:white">9. When I order online, shouldn't the delivery charge be the same every time?<img src="img/arrow.jpg"></figcaption>
+ <div id="faq9" class="ANS"> <font face="Verdana" size = "2" style="color:#fdcc3b;"> 
+ When you register for Internet Ordering, the system assigns each address you provide with a single Pizza Lelo 
+delivery location. If you request delivery service from multiple addresses online, the fee may vary because you may be ordering from a different Pizza Lelo 
+location. The delivery fee is, however, always the same online as it is offline. 
+  
+</font></div>
+</DIV>
+
+<DIV class="FAQ" onclick="toggle('faq10')">
+<figcaption style="font-size: 1.20em;color:white">10. How can I tell how much I am being charged for delivery service?  <img src="img/arrow.jpg"></figcaption>
+ <div id="faq10" class="ANS"> <font face="Verdana" size = "2" style="color:#fdcc3b;"> The delivery fee is listed at checkout in the itemized portion of the order
+ summary.</font></div>
+ </DIV>
+
+<DIV class="FAQ" onclick="toggle('faq11')">
+ <figcaption style="font-size: 1.20em;color:white">11. Why do I have to set my cookies to be enabled? <img src="img/arrow.jpg"></figcaption>
+ <div id="faq11" class="ANS"> <font face="Verdana" size = "2" style="color:#fdcc3b;"> To complete an order online with Pizza Lelo, it's best to have cookies enabled 
+ in your browser. By enabling cookies you will be sharing information that helps Pizza Lelo provide you a better online experience. If you don't have cookies 
+ enabled and would like to know how to change this, please refer to your browser's Help menu.</font></div>
+</DIV>
+
+<DIV class="FAQ" onclick="toggle('faq12')">
+ <figcaption style="font-size: 1.20em;color:white"> 12. What is future or advance ordering? <img src="img/arrow.jpg"> </figcaption>
+ <div id="faq12" class="ANS"> <font face="Verdana" size = "2" style="color:#fdcc3b;"> If you place an order and do NOT check the box indicating the order is for 
+ a future time or date, then the restaurant will receive your order as soon as you choose to submit the order. Upon submitting the order you will receive a 
+ confirmation page and an estimated time when your order will be ready.  If you would like to place a future order for the current day, you can choose any 
+ time in increments of 15 minutes as long as the time you enter is during restaurant hours of operation and at least 45 minutes later than the current time. 
+ We also accept orders for future dates! If you would like to place an order for a different day, you can do so up to 7 days in advance. You will receive an 
+ email confirmation when you submit the order and a reminder email on the day the order is due.</font></div>
+</DIV>
+
+
+ </div>
+    <footer>
+
+        <div class="container" align="center">
+    
+        <div class="row">
+  			<div class="col-sm-6">
+  			<h3>ORDER</h3>
+  			<a href="#" ng-click="sidesPage()"><h4 style="color:grey;">Sides</h4></a>
+  			<a href="#" ng-click="pizzaPage()"><h4 style="color:grey;">Pizza</h4></a>
+  			<a href="#" ng-click="dealsPage()"><h4 style="color:grey;">Deals</h4></a>
+  			<a href="#" ng-click="buildYourOwnPage()"><h4 style="color:grey;">Build your Own</h4></a>
+  			</div>
+  			<div class="col-sm-6">
+  			<h3>ABOUT US</h3>
+  			<a href="#" ng-click="faqsPage()"><h4 style="color:grey;">FAQs</h4></a>
+  			<a href="#" ng-click="findUsPage()"><h4 style="color:grey;">Find Us</h4></a>
+  			<a href="#" ng-click="ourStoryPage()"><h4 style="color:grey;">Our Story</h4></a>
+  			<a href="#" ng-click="contactUsPage()"><h4 style="color:grey;">Contact Us</h4></a>
+  			</div>
+		</div>
+            </div>
+            
+            <p align="center">Copyright &copy; pizzalelopizza-pizzalelopizza.rhcloud.com</p>
+    </footer>
+    </div> <!-- ng-app -->
+    
+       <script defer>
+       function checkOutPage()
+       {
+             	window.location = '/checkOutPage';
+       }
+    function faqsController($scope,$http,$location) {
+    	displayCart();
+        
+       	function displayCart(){
+       	if(JSON.parse(sessionStorage.getItem("cart"))!=null)
+       	{
+       	var itemNumber = JSON.parse(sessionStorage.getItem("cart")).length;
+       	document.getElementById("itemNumber").innerHTML=itemNumber;
+       	var cart= JSON.parse(sessionStorage.getItem("cart"));
+       		var ul = document.getElementById("theCart");
+       		ul.innerHTML = '';
+       		
+       	for (var i=0;i<itemNumber;i++) {
+   	      	var ul = document.getElementById("theCart");
+   	    	var li = document.createElement("li");
+   	    	ul.appendChild(li);
+   	    	li.innerHTML = '<a href="">'+cart[i].name+'--$'+cart[i].cost+'</a>';
+   	       	}
+   	       	
+   	       	var li = document.createElement("li");
+   	    	ul.appendChild(li);
+   	    	li.innerHTML = '<div style="text-align: center;"><button type="button" class="btn btn-warning" onclick="checkOutPage()">Checkout</button></div>';
+   	    	
+   	       	}
+   	       	else
+   	       	{
+   	       	var ul = document.getElementById("theCart");
+			ul.innerHTML = '';
+			document.getElementById("itemNumber").innerHTML="";
+   	       	}
+   	}
+		$scope.homePage = function() {
+		window.location = '/index';
+		};
+		$scope.pizzaPage = function() {
+		window.location = '/pizzaPage';
+		};
+		$scope.buildYourOwnPage = function() {
+		window.location = '/buildYourOwnPage';
+		};
+		
+		$scope.sidesPage = function() {
+		window.location = '/sidesPage';
+		};
+		$scope.dealsPage = function() {
+		window.location = '/dealsPage';
+		};
+		$scope.findUsPage = function() {
+		window.location = '/findUsPage';
+		};
+		$scope.faqsPage = function() {
+		window.location = '/faqsPage';
+		};
+		$scope.ourStoryPage = function() {
+		window.location = '/ourStoryPage';
+		};
+		$scope.contactUsPage = function() {
+		window.location = '/contactUsPage';
+		};
+		}
+		</script>
+    </body>
+
+</html>

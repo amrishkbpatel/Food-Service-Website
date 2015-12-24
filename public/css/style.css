@@ -1,0 +1,67 @@
+/*-----------row_s--------------*/
+.row_1 {
+	text-align: center;
+	padding: 30px 0;
+	background: #5e351b url(../img/patternbg.jpg) 0 0 repeat;
+}
+.row_2 {
+	text-align: center;
+	padding: 22px 0 0;
+	background: #5e351b url(../img/patternbg.jpg) 0 0 repeat;
+}
+.row_3 {
+	padding: 43px 0 13px;
+	background:#fae9de /*url(../img/pattern2.jpg) 0 0 repeat*/;
+}
+.row_4 {
+	padding: 30px 0 81px;
+	background: #ffffff;
+}
+.row_5 {
+	padding: 30px 0 98px;
+	background: #ffffff;
+}
+.row_6 {
+	padding: 30px 0 72px;
+	background: #ffffff;
+}
+.row_7 {
+	padding: 30px 0 80px;
+	background: #ffffff;
+}
+.row_8 {
+	padding: 63px 0 112px;
+	background: #ffffff;
+}
+.row_9 {
+	padding: 31px 0 90px;
+	background: #ffffff;
+}
+.row_10 {
+	padding: 101px 0 85px;
+	background: #ffffff;
+}
+.row_11 {
+	padding: 40px 0 40px;
+	background: #ffffff;
+}
+/*-------------------select------------------*/
+.select-menu {
+	display: none !important;
+}
+/* disable CSS transitions for containers with infinite scrolling*/
+.isotope.infinite-scrolling {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+
+.isotope.infinite-scrolling {
+-webkit-transition: none;
+-moz-transition: none;
+-ms-transition: none;
+-o-transition: none;
+transition: none;
+}

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pizzalelopizza a pizza ordering website where you can easily customize your pizza, located in many places in united states.">
+<meta name="author" content="CMPE280 Team10">
+<meta name="keyword" content="Pizzalelopizza, Creative, Pizza, Analytics, Food, Bootstrap, Responsive, Retina, Minimal">
+
+
+    <title>Pizza Lelo Pizza</title>
+	
+	<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	 -->
+	 
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+
+	<!-- jQuery -->
+    <script src="js/jquery.js" defer></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js" defer></script>
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    	<!-- angular.js -->
+	 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	 <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	
+
+</head>
+
+<body>
+<div ng-app="" ng-controller="dealsController">
+<header>
+    <div class="brand">Pizza Lelo Pizza</div>
+   	<div class="address-bar">Happy Pizzas To Make Happy Times</div>
+	  
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Business Casual</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                 <li>
+                        <a href="#" ng-click="homePage()">HOME</a>
+                    </li>
+                    <li class="active">
+                        <a href="#" ng-click="pizzaPage()">PIZZA</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="buildYourOwnPage()">BUILD YOUR OWN</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="sidesPage()">SIDES</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="dealsPage()">DEALS</a>
+                    </li>
+                   <li>
+                        <a href="#" ng-click="findUsPage()">Find Us</a>
+                    </li>
+                <li class="dropdown">
+                
+          	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart"></span><span  id="itemNumber"></span> <span class="caret"></span></a>
+         	<ul class="dropdown-menu" role="menu"  id="theCart" style="color:grey;padding-left:0.2cm;">
+           </ul>
+		 	</li>
+            </ul>
+               
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    
+    <br>
+    
+      <div class="container" align="center">
+      <h4 align="center"style="color:#fdcc3b;font-size:2em;padding-bottom:10px;">Deals</font></h4>
+      <div class="row">
+      
+  			<div class="col-sm-6" style="color:#fdcc3b; border:3px solid #d4a26f ;">
+  			<br>
+  			<figure>
+  			<img  align="left" src="img/newimages/FightNight_DealTile_175x203 copy.jpg" width="200" height="150" alt="">
+  			
+  			<h4> FIGHT NIGHT DEAL</h4>
+  			<figcaption style="font-size: 1.20em;color:white">Amplify Fight Night with 2 Large 2-topping pizzas and an order of breadsticks. Additional charge for Stuffed Crust, extra cheese, extra toppings and cheese sticks.</figcaption>
+			</figure>	
+			<br>
+			
+			<span style="float:left;padding-left:0.5cm;font-size:170%;color:white;"><strong>$19.99</strong></span>	
+			<button type="button" class="btn btn-warning" ng-click="addDeals(1)">Add to Order</button>
+			<br><br>
+  			</div>
+  				
+  					
+  			<div class="col-sm-6" style="color:#fdcc3b; border:3px solid #d4a26f ;">
+  			<br>
+  			<figure>
+  			<img  align="left" src="img/newimages/Deal_pizzacookie_tile copy.jpg" width="200" height="150" alt="">
+  			<h4> CHOCOLATE CHIP COOKIE DEAL </h4>
+  			<figcaption style="font-size: 1.20em;color:white">HERSHEY'S Chocolate Chips, cut into 8 slices and served warm for your crew to enjoy with a purchase of a pizza.  Offer includes Medium, Large, Dinner Box.</figcaption>
+			</figure>	
+			<br>
+			
+			
+
+
+
+			<span style="float:left;padding-left:0.5cm;font-size:170%;color:white;"><strong>$15.99</strong></span>		
+			<button type="button" class="btn btn-warning" ng-click="addDeals(2)">Add to Order</button>
+			<br><br>
+  			</div>
+  	
+  			</div>
+  			
+  			
+  			      <div class="row">
+      
+  			<div class="col-sm-6" style="color:#fdcc3b; border:3px solid #d4a26f ;">
+  			<br>
+  			<figure>
+  			<img  align="left" src="img/newimages/Deal_799New copy.jpg" width="200" height="150" alt="">
+  			<h4> LARGE 2 TOPPING PIZZA</h4>
+  			<figcaption style="font-size: 1.20em;color:white">Get a large 2-topping pizza for $7.99 and flavor it up with a crust flavor or sauce drizzle for free. Available Online Only. </figcaption>
+			</figure>	
+			<br>
+			
+
+
+	
+<span style="float:left;padding-left:0.5cm;font-size:170%;color:white;"><strong>$7.99</strong></span>	
+			<button type="button" class="btn btn-warning" ng-click="addDeals(3)">Add to Order</button>
+			<br><br>
+  			</div>
+  					
+  			<div class="col-sm-6" style="color:#fdcc3b; border:3px solid #d4a26f ;">
+  			<br>
+  			<figure>
+  			<img  align="left" src="img/newimages/699_pairs copy.jpg" width="200" height="150" alt="">
+  			<h4> 2 MEDIUM PIZZAS, 4 TOPPINGS</h4>
+  			<figcaption style="font-size: 1.20em;color:white">Get 2 medium pizzas with your choice of up to 4 total toppings for $6.99 each. Flavor up any pizza for free</figcaption>
+			</figure>	
+			<br>
+			
+
+
+  			
+  			
+  			
+	
+<span style="float:left;padding-left:0.5cm;font-size:170%;color:white;"><strong>$12.98</strong></span>	
+			<button type="button" class="btn btn-warning" ng-click="addDeals(4)">Add to Order</button>
+			<br><br>
+  			</div>
+  			
+  			</div>
+  			<div class="row">
+      
+  			<div class="col-sm-6" style="color:#fdcc3b; border:3px solid #d4a26f ;">
+  			<br>
+  			<figure>
+  			<img  align="left" src="img/newimages/FWingMeal_Tile copy.jpg" width="200" height="150" alt="">
+  			<h4>FAMILY WING MEAL</h4>
+  			<figcaption style="font-size: 1.20em;color:white">16 WingStreet Wings with your choice of two sauces and two orders of Waffle Fries.Online orders only.</figcaption>
+			</figure>	
+			<br>
+			
+			
+
+
+	
+<span style="float:left;padding-left:0.5cm;font-size:170%;color:white;"><strong>$16.99</strong></span>	
+			<button type="button" class="btn btn-warning" ng-click="addDeals(5)">Add to Order</button>
+			<br><br>
+  			</div>
+  				
+  					
+  			<div class="col-sm-6" style="color:#fdcc3b; border:3px solid #d4a26f ;">
+  			<br>
+  			<figure>
+  			<img  align="left" src="img/newimages/BigDinnerBoxDealTile copy.jpg" width="200" height="150" alt="">
+  			<h4>BIG DINNER BOX</h4>
+  			<figcaption style="font-size: 1.20em;color:white">Go for greatness and get 2 medium pizzas and 2 sides - or skip the sides and get a third medium pizza.</figcaption>
+			</figure>	
+			<br>
+			
+
+
+
+			<span style="float:left;padding-left:0.5cm;font-size:170%;color:white;"><strong>$11</strong></span>		
+			<button type="button" class="btn btn-warning" ng-click="addDeals(6)">Add to Order</button>
+			<br><br>
+  			</div>
+  	
+  			</div>
+  			
+  			
+  			      <div class="row">
+      		<div class="col-sm-6" style="color:#fdcc3b; border:3px solid #d4a26f ;">
+  			<br>
+  			<figure>
+  			<img  align="left" src="img/newimages/BCSCDealTileImage copy.jpg" width="200" height="150" alt="">
+  			<h4>BACON CHEESE STUFFED CRUST</h4>
+  			<figcaption style="font-size: 1.20em;color:white">Our new Bacon Cheese Stuffed Crust with hardwood smoked bacon and a blend of delicious cheeses is so good as it speaks for itself. </figcaption>
+			</figure>	
+			<br>
+			<button type="button" class="btn btn-warning" ng-click="addDeals(7)">Add to Order</button>
+			<span style="float:left;padding-left:0.5cm;font-size:170%;color:white;"><strong>$9.99</strong></span>	
+			
+			<br><br>
+  			</div>
+  			
+  					
+  			<div class="col-sm-6" style="color:#fdcc3b; border:3px solid #d4a26f ;">
+  			<br>
+  			<figure>
+  			<img  align="left" src="img/newimages/11AnyDealTile copy.jpg" width="200" height="150" alt="">
+  			<h4>ONLINE ONLY: $11 ANY</h4>
+  			<figcaption style="font-size: 1.20em;color:white">Get any of our new recipes or your favorites, any size, any toppings for just $11. Try it on our Pan, Thin N Crispy or Hand Tossed crusts</figcaption>
+			</figure>	
+			<br>
+			
+
+
+	
+<span style="float:left;padding-left:0.5cm;font-size:170%;color:white;"><strong>$11</strong></span>	
+			<button type="button" class="btn btn-warning" ng-click="addDeals(8)">Add to Order</button>
+			<br><br>
+  			</div>
+  			
+  			</div>
+  			</div>
+  			
+    
+    
+    
+    </header>
+    <br><br>
+    <footer>
+
+        <div class="container" align="center">
+    
+        <div class="row">
+  			<div class="col-sm-6">
+  			<h3>ORDER</h3>
+  			<a href="#" ng-click="sidesPage()"><h4 style="color:grey;">Sides</h4></a>
+  			<a href="#" ng-click="pizzaPage()"><h4 style="color:grey;">Pizza</h4></a>
+  			<a href="#" ng-click="dealsPage()"><h4 style="color:grey;">Deals</h4></a>
+  			<a href="#" ng-click="buildYourOwnPage()"><h4 style="color:grey;">Build your Own</h4></a>
+  			</div>
+  			<div class="col-sm-6">
+  			<h3>ABOUT US</h3>
+  			<a href="#" ng-click="faqsPage()"><h4 style="color:grey;">FAQs</h4></a>
+  			<a href="#" ng-click="findUsPage()"><h4 style="color:grey;">Find Us</h4></a>
+  			<a href="#" ng-click="ourStoryPage()"><h4 style="color:grey;">Our Story</h4></a>
+  			<a href="#" ng-click="contactUsPage()"><h4 style="color:grey;">Contact Us</h4></a>
+  			</div>
+		</div>
+            </div>
+            
+            <p align="center">Copyright &copy; pizzalelopizza-pizzalelopizza.rhcloud.com</p>
+    </footer>
+ 
+    
+       <script>
+    	 function checkOutPage()
+       {
+             	window.location = '/checkOutPage';
+       }
+    function dealsController($scope,$http,$location) {
+    	displayCart();
+         
+           	function displayCart(){
+           	if(JSON.parse(sessionStorage.getItem("cart"))!=null)
+           	{
+           	var itemNumber = JSON.parse(sessionStorage.getItem("cart")).length;
+           	document.getElementById("itemNumber").innerHTML=itemNumber;
+           	var cart= JSON.parse(sessionStorage.getItem("cart"));
+           		var ul = document.getElementById("theCart");
+           		ul.innerHTML = '';
+           		
+           	for (var i=0;i<itemNumber;i++) {
+       	      	var ul = document.getElementById("theCart");
+       	    	var li = document.createElement("li");
+       	    	ul.appendChild(li);
+       	    	li.innerHTML = '<a href="">'+cart[i].name+'--$'+cart[i].cost+'</a>';
+       	       	}
+       	       	
+       	       	var li = document.createElement("li");
+       	    	ul.appendChild(li);
+       	    	li.innerHTML = '<div style="text-align: center;"><button type="button" class="btn btn-warning" onclick="checkOutPage()">Checkout</button></div>';
+       	    	
+       	       	}
+       	       	else
+       	       	{
+       	       	var ul = document.getElementById("theCart");
+    			ul.innerHTML = '';
+    			document.getElementById("itemNumber").innerHTML="";
+       	       	}
+       	}
+       	$scope.addDeals= function(dealnum) {
+                if (dealnum == 1) {
+                    var item = {"name": "FIGHT NIGHT DEAL", "vegnv": "v", "cost": "19.99"};
+                }
+                else if (dealnum == 2) {
+                    var item = {"name": "CHOCOLATE CHIP COOKIE DEAL", "vegnv": "v", "cost": "15.99"};
+                }
+                else if(dealnum == 3){
+                    var item = {"name": "LARGE 2 TOPPING PIZZA", "vegnv": "v", "cost": "7.99"};
+
+                }
+                else if (dealnum == 4) {
+                    var item = {"name": " 2 MEDIUM PIZZAS, 4 TOPPINGS", "vegnv": "v", "cost": "12.98"};
+                }
+                else if(dealnum == 5){
+                    var item = {"name": "FAMILY WING MEAL", "vegnv": "v", "cost": "16.99"};
+
+                }
+                else if (dealnum == 6) {
+                    var item = {"name": "BIG DINNER BOX", "vegnv": "v", "cost": "11.00"};
+                }
+                else if(dealnum == 7){
+                    var item = {"name": "BACON CHEESE STUFFED CRUST", "vegnv": "v", "cost": "9.99"};
+
+                }
+                else{
+                var item = {"name": "ONLINE ONLY: $11 ANY", "vegnv": "v", "cost": "11.00"};
+                }
+
+                var cart= JSON.parse(sessionStorage.getItem("cart"));
+                if(cart==null)
+                {
+                    cart=[item];
+                    console.log(cart.length)
+                    sessionStorage.setItem("cart",JSON.stringify(cart));
+                }
+                else
+                {
+                    console.log("cart not empty");
+                    cart.push(item);
+                    sessionStorage.setItem("cart",JSON.stringify(cart));
+                }
+
+                console.log(JSON.parse((sessionStorage.getItem("cart"))));
+                displayCart();
+            };
+		$scope.homePage = function() {
+		window.location = '/index';
+		};
+		$scope.pizzaPage = function() {
+		window.location = '/pizzaPage';
+		};
+		$scope.buildYourOwnPage = function() {
+		window.location = '/buildYourOwnPage';
+		};
+		
+		$scope.sidesPage = function() {
+		window.location = '/sidesPage';
+		};
+		$scope.dealsPage = function() {
+		window.location = '/dealsPage';
+		};
+		$scope.findUsPage = function() {
+		window.location = '/findUsPage';
+		};
+		$scope.faqsPage = function() {
+		window.location = '/faqsPage';
+		};
+		$scope.ourStoryPage = function() {
+		window.location = '/ourStoryPage';
+		};
+		$scope.contactUsPage = function() {
+		window.location = '/contactUsPage';
+		};
+		}
+		</script>
+	   </div> <!-- ng-app -->
+    </body>
+
+</html>

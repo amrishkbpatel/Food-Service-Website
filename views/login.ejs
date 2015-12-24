@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="admin/img/favicon.png">
+
+    <title>Login Page</title>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+ 
+    <!-- Bootstrap CSS -->    
+    <link href="admin/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="admin/css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="admin/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="admin/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="admin/css/style.css" rel="stylesheet">
+    <link href="admin/css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <!--[if lt IE 9]>
+    <script src="admin/js/html5shiv.js"></script>
+    <script src="admin/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+  <body class="login-img3-body">
+	<div  ng-app="" ng-controller="personController">
+	<div class="container">
+		    <form class="login-form">        
+	        <div class="login-wrap">
+					<div align="center" style="color:white;"><h2>Admin Login</h2></div>
+	            <p class="login-img"><i class="icon_lock_alt"></i></p>
+	            <div class="input-group">
+	              <span class="input-group-addon"><i class="icon_profile"></i></span>
+	              <input type="text" ng-model="inputUsername" class="form-control" placeholder="Username" autofocus>
+	            </div>
+	            <div class="input-group">
+	                <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+	                <input type="password" ng-model="inputPassword" class="form-control" placeholder="Password">
+	            </div>
+	            <label class="checkbox">
+	                <input type="checkbox" value="remember-me"> Remember me
+	                <span class="pull-right"> <a href="#"> Forgot Password?</a></span>
+	            </label>
+	            <!-- input type="button" ng-click="signIn()" name="signin" id="signin" class="btn btn-primary btn-lg btn-block" value="Login"-->
+	            <input type="button" ng-click="signIn()" name="signin" value="Sign In" id="signin" tabindex="3" class="btn btn-primary btn-lg btn-block">
+	        </div>
+	      </form>
+	
+	    </div>
+	</div>
+
+  </body>
+  <script>
+		function personController($scope,$http,$location) {
+		    
+			$scope.signIn = function() {
+			
+			if($scope.inputUsername == null)
+			{
+			alert("User Name is required");
+			return;
+			}
+			if($scope.inputPassword == null)
+			{
+			alert("Password is required");
+			return;
+			}
+		    	$http({
+		            method: 'POST',
+		            url: '/signin',
+		            data: { "username": $scope.inputUsername, "password": $scope.inputPassword }
+		            
+		         }).success(function(response){
+		           
+		            //alert(JSON.stringify(response));
+		            
+		            
+		            if(response.login == "Success")
+		           		window.location = '/dashboard';
+		            else
+		            	window.location = '/signin';
+		        }).error(function(error){
+		            alert("error");
+		        });
+		    };
+	}
+  </script>
+</html>

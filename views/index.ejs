@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pizzalelopizza a pizza ordering website where you can easily customize your pizza, located in many places in united states.">
+<meta name="author" content="CMPE280 Team10">
+<meta name="google-site-verification" content="57zSwGo7k6Yu8d8CuUWR7AaVC1N25cDXWR7SzENqKOk" />
+<meta name="keyword" content="Pizzalelopizza, Creative, Pizza, Analytics, Food, Bootstrap, Responsive, Retina, Minimal">
+<link rel="shortcut icon" href="img/favicon.png">
+    <title>Pizza Lelo Pizza</title>
+	
+	<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	 -->
+	 
+	<!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- angular.js -->
+	 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	 <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	 
+</head>
+
+<body>
+<div ng-app="" ng-controller="homeController">
+<header>
+    <div class="brand">Pizza Lelo Pizza</div>
+  <div id="google_translate_element" style="margin-right:12px;" align="right"></div>
+  <br>
+   <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="" ng-click="homePage()">Pizza Lelo Pizza</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                 <li class="active">
+                        <a href ng-click="homePage()">HOME</a>
+                    </li>
+                    <li>
+                        <a href ng-click="pizzaPage()">PIZZA</a>
+                    </li>
+                    <li>
+                        <a href ng-click="buildYourOwnPage()">BUILD YOUR OWN</a>
+                    </li>
+               <li class="dropdown">
+          	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart"></span> <span  id="itemNumber"></span><span class="caret"></span></a>
+         	<ul class="dropdown-menu" id="theCart" role="menu">
+            </ul>
+             </li>
+                </ul>
+              
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    </header>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <div id="carousel-example-generic" class="carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                            <img class="img-responsive img-full" src="img/pizza.jpg" width="1000" height="650" alt="pizza">
+                            </div>
+                            <div class="item">
+                            <img class="img-responsive img-full" src="img/bread.jpg" width="1000" height="650" alt="bread">
+                             </div>
+                            <div class="item">
+                            <img class="img-responsive img-full" src="img/cake.jpg" width="1000" height="650" alt="cake">    
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="img/drinks.jpg" width="1000" height="650" alt="drink">
+                          </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+                    <h3 class="brand-before">
+                        <small>Welcome to</small>
+                    </h3>
+                    <h2>Pizza Lelo Pizza</h2>
+                    <hr class="tagline-divider">
+                  </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="box">
+                <div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" ng-click=pizzaPage() class="thumbnail">
+      <img src="img/thumbpizza.jpg" alt="...">
+    </a>
+     <h3 align="center">Pizza</h3>
+  </div>
+  <div class="col-xs-6 col-md-3">
+       <a href="#" ng-click=buildYourOwnPage() class="thumbnail">
+      <img src="img/makeyourownthumb.jpg" alt="...">
+    </a>
+         <h3 align="center">Build Your Own</h3>
+  </div>
+    <div class="col-xs-6 col-md-3">
+     <a href="#" ng-click=sidesPage() class="thumbnail">
+      <img src="img/sidesthumb.jpg" alt="...">
+    </a>
+         <h3 align="center">Sides</h3>
+  </div>
+    <div class="col-xs-6 col-md-3">
+     <a href="#" ng-click=dealsPage() class="thumbnail">
+      <img src="img/dealsthumb.jpg" alt="...">
+    </a>
+         <h3 align="center">Deals</h3>
+  </div>
+</div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- /.container -->
+
+    <footer>
+
+        <div class="container" align="center">
+    
+        <div class="row">
+  			<div class="col-sm-6">
+  			<h3>ORDER</h3>
+  			<a href="#" ng-click="sidesPage()"><h4 style="color:grey;">Sides</h4></a>
+  			<a href="#" ng-click="pizzaPage()"><h4 style="color:grey;">Pizza</h4></a>
+  			<a href="#" ng-click="dealsPage()"><h4 style="color:grey;">Deals</h4></a>
+  			<a href="#" ng-click="buildYourOwnPage()"><h4 style="color:grey;">Build your Own</h4></a>
+  			</div>
+  			<div class="col-sm-6">
+  			<h3>ABOUT US</h3>
+  			<a href="#" ng-click="faqsPage()"><h4 style="color:grey;">FAQs</h4></a>
+  			<a href="#" ng-click="findUsPage()"><h4 style="color:grey;">Find Us</h4></a>
+  			<a href="#" ng-click="ourStoryPage()"><h4 style="color:grey;">Our Story</h4></a>
+  			<a href="#" ng-click="contactUsPage()"><h4 style="color:grey;">Contact Us</h4></a>
+  			</div>
+		</div>
+            </div>
+            
+            <p align="center">Copyright &copy; pizzalelopizza-pizzalelopizza.rhcloud.com</p>
+			 <div align="center"><div class="fb-like" data-href="http://pizzalelopizza-pizzalelopizza.rhcloud.com/" data-width="200px" data-layout="standard" data-action="like" data-show-faces="false" data-share="true" align="center"></div></div>
+    </footer>
+    </div> <!-- ng-app -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js" defer></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js" defer></script>
+
+   
+    <script defer>
+     function checkOutPage()
+       {
+             	window.location = '/checkOutPage';
+       }
+        function homeController($scope,$http,$location) {
+          displayCart();
+          pageVisits();
+          function displayCart(){
+           	if(JSON.parse(sessionStorage.getItem("cart"))!=null)
+           	{
+           	var itemNumber = JSON.parse(sessionStorage.getItem("cart")).length;
+           	document.getElementById("itemNumber").innerHTML=itemNumber;
+           	var cart= JSON.parse(sessionStorage.getItem("cart"));
+           		var ul = document.getElementById("theCart");
+           		ul.innerHTML = '';
+           		
+           	for (var i=0;i<itemNumber;i++) {
+       	      	var ul = document.getElementById("theCart");
+       	    	var li = document.createElement("li");
+       	    	ul.appendChild(li);
+       	    	li.innerHTML = '<a href="">'+cart[i].name+'--$'+cart[i].cost+'</a>';
+       	       	}
+       	       	
+       	       	var li = document.createElement("li");
+       	    	ul.appendChild(li);
+       	    	li.innerHTML = '<div style="text-align: center;"><button type="button" class="btn btn-warning" onclick="checkOutPage()">Checkout</button></div>';
+       	    	
+       	       	}
+       	       	else
+       	       	{
+       	       	var ul = document.getElementById("theCart");
+    			ul.innerHTML = '';
+    			document.getElementById("itemNumber").innerHTML="";
+       	       	}
+       	}
+       	
+       	
+       	function pageVisits() {
+		  $http({
+	            method: 'GET',
+	            url: '/pageVisits',
+	          }).success(function(response){
+	 	     }).error(function(error){
+	            alert("error");
+	        });
+		    };   	
+		    	
+		$scope.pizzaPage = function() {
+		window.location = '/pizzaPage';
+		};
+		$scope.buildYourOwnPage = function() {
+		window.location = '/buildYourOwnPage';
+		};
+		
+		$scope.sidesPage = function() {
+		window.location = '/sidesPage';
+		};
+		$scope.dealsPage = function() {
+		window.location = '/dealsPage';
+		};
+		$scope.findUsPage = function() {
+		window.location = '/findUsPage';
+		};
+		$scope.faqsPage = function() {
+		window.location = '/faqsPage';
+		};
+		$scope.ourStoryPage = function() {
+		window.location = '/ourStoryPage';
+		};
+		$scope.contactUsPage = function() {
+		window.location = '/contactUsPage';
+		};
+		}
+		
+		</script>
+
+    
+    <script defer>
+
+var tag = document.createElement('script');
+
+        tag.src = "//www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('ytplayer', {
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        player.mute();
+        player.playVideo();
+    }
+
+</script>
+
+		
+		<!-- Script to Activate the Carousel -->
+		<script type="text/javascript">
+  $(document).ready(function() {
+    $('.carousel').carousel({
+      interval: 2500
+    })
+  });
+</script>
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en'
+  }, 'google_translate_element');
+}
+</script><script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=551258181679529";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62516412-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>

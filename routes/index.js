@@ -1,0 +1,13 @@
+
+/*
+ * GET home page.
+ */
+
+exports.index = function(req, res){
+  res.render('index');
+};
+
+exports.admin = function(req, res){
+	  res.render('login');
+	};
+

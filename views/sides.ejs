@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Pizza Lelo Pizza</title>
+	
+	  <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+	
+	
+	<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	 -->
+	 
+	 	<!-- jQuery -->
+    <script src="js/jquery.js" defer></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js" defer></script>
+	 
+  
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    	<!-- angular.js -->
+	 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	 <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+
+
+
+</head>
+
+<body>
+<div ng-app="" ng-controller="sidesController">
+<header>
+    <div class="brand">Pizza Lelo Pizza</div>
+    <div class="address-bar">Happy Pizzas To Make Happy Times</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Business Casual</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                 <li>
+                        <a href="#" ng-click="homePage()">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="pizzaPage()">PIZZA</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="buildYourOwnPage()">BUILD YOUR OWN</a>
+                    </li>
+                    <li class="active">
+                        <a href="#" ng-click="sidesPage()">SIDES</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="dealsPage()">DEALS</a>
+                    </li>
+                   <li>
+                        <a href="#" ng-click="findUsPage()">Find Us</a>
+                    </li>
+                <li class="dropdown">
+          	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart"></span> <span  id="itemNumber"></span><span class="caret"></span></a>
+         	<ul class="dropdown-menu" id="theCart" role="menu">
+            </ul>
+             </li>
+                </ul>
+               
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    </header>
+</div>
+</body>
+<link rel="stylesheet" href="css/jqx.base.css" type="text/css" />
+<script type="text/javascript" src="js/scripts/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxcore.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxdata.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxbuttons.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxscrollbar.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxmenu.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxgrid.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxgrid.columnsresize.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxlistbox.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxdropdownlist.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxdragdrop.js"></script>
+<script type="text/javascript" src="js/scripts/demos.js"></script>
+<style type="text/css">
+    .draggable-demo-cart
+    {
+        border: 2px dashed #aaa;
+        padding: 5px;
+        width: 260px;
+        margin: auto;
+    }
+    .draggable-demo-shop
+    {
+        border: 1px solid #666;
+        width: 900px;
+        padding: 15px;
+    }
+    .draggable-demo-catalog
+    {
+        position: relative;
+        width: 550px;
+        border: 1px solid #bbb;
+        height: 457px;
+        float: left;
+    }
+    .draggable-demo-product-image
+    {
+        width: 120px;
+    }
+    .draggable-demo-product
+    {
+        padding: 10px;
+        /*border: 1px solid #888;*/
+        width: 145px;
+        height: 145px;
+        /*background-color: #fff;*/
+        position: absolute;
+        margin: 15px;
+    }
+    .draggable-demo-product img
+    {
+        width: 120px;
+        height: 150px;
+        /*border: 1px solid #aaa;*/
+        border-top-width: 80px;
+        outline-width: 5px;
+
+    }
+    .draggable-demo-product-header
+    {
+        /*border: 1px solid #888;*/
+        height: 20px;
+        /*border-bottom-width: 0px;*/
+        font-size: 13px;
+        position: relative;
+        text-align: center;
+    }
+    .draggable-demo-product-header-label
+    {
+        margin-top: 3px;
+        color: white;
+    }
+    .draggable-demo-product-price
+    {
+        position: absolute;
+        top: 150px;
+        left: 6px;
+        width: 120px;
+        text-align: center;
+        font-family: Verdana;
+        font-size: 13px;
+        display: none;
+        height: 16px;
+        border-top: 1px solid #888;
+        border-bottom: 1px solid #fff;
+        color: white;
+    }
+    .draggable-demo-title
+    {
+        font-size: 23px;
+        font-family: Verdana;
+        text-align: center;
+        padding: 7px;
+        margin: 5px;
+        font-weight: bold;
+        border: 1px solid #aaa;
+        color: white;
+    }
+    .draggable-demo-cart-wrapper
+    {
+        float: right;
+        border: 1px solid #aaa;
+        height: 457px;
+        width: 300px;
+    }
+    .draggable-demo-total
+    {
+        font-size: 17px;
+        font-family: Verdana;
+        margin: 6px;
+        margin-top: 7px;
+        padding: 7px;
+    }
+</style>
+<script type="text/javascript">
+    var cart = (function ($) {
+        theme = $.jqx.theme;
+        var productsOffset = 3,
+                products = {
+                    'Apple Pie': {
+                        pic: 'pie.jpg',
+                        price: 10
+                    },
+                    'Chocolate cookie': {
+                        pic: 'cookie1.jpg',
+                        price: 11
+                    },
+                    'Pepsi': {
+                        pic: 'pepsi.jpg',
+                        price: 4
+                    },
+                    'Cinnamon sticks': {
+                        pic: 'cinnamon.jpg',
+                        price: 9
+                    },
+                    'Sprite': {
+                        pic: 'sprite.jpg',
+                        price: 3
+                    },
+                    'Breadsticks': {
+                        pic: 'breadsticks.jpg',
+                        price: 12
+                    }
+                  /*  'Guitar T-shirt': {
+                        pic: 'scott-pilgrim-red-rock-band.png',
+                        price: 24
+                    },
+                    'Dodgers T-shirt': {
+                        pic: '2-sided-dodgers-bankrupt-t-shirt-ash.png',
+                        price: 21
+                    },
+                    'Misfits T-shirt': {
+                        pic: 'misfits-sf-giants-white.png',
+                        price: 21
+                    }*/
+                },
+                theme, onCart = false, cartItems = [], totalPrice = 0;
+
+        function render() {
+            productsRendering();
+            gridRendering();
+        };
+
+        function addClasses() {
+            $('.draggable-demo-catalog').addClass('jqx-scrollbar-state-normal-' + theme);
+            $('.draggable-demo-title').addClass('jqx-expander-header-' + theme);
+            $('.draggable-demo-title').addClass('jqx-expander-header-expanded-' + theme);
+            $('.draggable-demo-total').addClass('jqx-expander-header-' + theme).addClass('jqx-expander-header-expanded-' + theme);
+            if (theme === 'shinyblack') {
+                $('.draggable-demo-shop').css('background-color', '#555');
+                $('.draggable-demo-product').css('background-color', '#999');
+            }
+        };
+
+        function productsRendering() {
+            var catalog = $('#catalog'),
+                    imageContainer = $('</div>'),
+                    image, product, left = 0, top = 0, counter = 0;
+            for (var name in products) {
+                product = products[name];
+                image = createProduct(name, product);
+                image.appendTo(catalog);
+                if (counter !== 0 && counter % 3 === 0) {
+                    top += 190; // image.outerHeight() + productsOffset;
+                    left = 0;
+                }
+                image.css({
+                    left: left,
+                    top: top
+                });
+                left += 180; // image.outerWidth() + productsOffset;
+                counter += 1;
+            }
+            $('.draggable-demo-product').jqxDragDrop({ dropTarget: $('#cart'), revert: true });
+        };
+
+        function createProduct(name, product) {
+            return $('<div class="draggable-demo-product jqx-rc-all">' +
+                    '<div class="jqx-rc-t draggable-demo-product-header jqx-widget-header-' + theme + ' jqx-fill-state-normal-' + theme + '">' +
+                    '<div class="draggable-demo-product-header-label"> ' + name + '</div></div>' +
+                    '<div class="jqx-fill-state-normal-' + theme + ' draggable-demo-product-price">Price: <strong>$' + product.price + '</strong></div>' +
+                    '<img src="img/' + product.pic + '" alt='
+                    + name + '" class="jqx-rc-b" />' +
+                    '</div>');
+        };
+
+        function gridRendering() {
+            $("#jqxgrid").jqxGrid(
+                    {
+                        height: 335,
+                        width: 230,
+
+                        keyboardnavigation: false,
+                        selectionmode: 'none',
+                        columns: [
+                            { text: 'Item', dataField: 'name', width: 140 },
+                            { text: 'Count', dataField: 'count', width: 90 },
+                           // { text: 'Remove', dataField: 'remove', width: 60 }
+                        ]
+                    });
+            $("#jqxgrid").bind('cellclick', function (event) {
+                var index = event.args.rowindex;
+                if (event.args.datafield == 'remove') {
+                    var item = cartItems[index];
+                    if (item.count > 1) {
+                        item.count -= 1;
+                        updateGridRow(index, item);
+                    }
+                    else {
+                        cartItems.splice(index, 1);
+                        removeGridRow(index);
+                    }
+                    updatePrice(-item.price);
+                }
+            });
+        };
+
+        function init() {
+            theme = getDemoTheme();
+            render();
+            addClasses();
+            addEventListeners();
+        };
+
+        function addItem(item) {
+            var index = getItemIndex(item.name);
+            if (index >= 0) {
+                cartItems[index].count += 1;
+                updateGridRow(index, cartItems[index]);
+            } else {
+                var id = cartItems.length,
+                        item = {
+                            name: item.name,
+                            count: 1,
+                            price: item.price,
+                            index: id,
+                            remove: '<div style="text-align: center; cursor: pointer; width: 53px;"' +
+                            'id="draggable-demo-row-' + id + '">X</div>'
+                        };
+                cartItems.push(item);
+                addGridRow(item);
+            }
+            updatePrice(item.price);
+            addOrder(item.price);
+
+        };
+
+
+        function updatePrice(price) {
+            totalPrice += price;
+            $('#total').html(' ');
+            //addOrder(totalPrice);
+        };
+
+        function addGridRow(row) {
+            $("#jqxgrid").jqxGrid('addrow', null, row);
+        };
+
+        function updateGridRow(id, row) {
+            var rowID = $("#jqxgrid").jqxGrid('getrowid', id);
+            $("#jqxgrid").jqxGrid('updaterow', rowID, row);
+        };
+
+        /*function removeGridRow(id) {
+            var rowID = $("#jqxgrid").jqxGrid('getrowid', id);
+            $("#jqxgrid").jqxGrid('deleterow', rowID);
+            //removeItem();
+        }; */
+
+        function getItemIndex(name) {
+            for (var i = 0; i < cartItems.length; i += 1) {
+                if (cartItems[i].name === name) {
+                    return i;
+                }
+            }
+            return -1;
+        };
+
+        function toArray(obj) {
+            var item, array = [], counter = 1;
+            for (var key in obj) {
+                item = {};
+                item = {
+                    name: key,
+                    price: obj[key].count,
+                    count: obj[key].price,
+                    number: counter
+                }
+                array.push(item);
+                counter += 1;
+            }
+            return array;
+        };
+
+        function addOrder(pizzaType) {
+            if(pizzaType=="10")
+            {
+                var item={"name":"Apple Pie","vegnv":"v","cost":"10"};
+            }
+            else if(pizzaType==11)
+            {
+                var item={"name":"Chocolate cookie","vegnv":"v","cost":"11"};
+            }
+            else if(pizzaType==4)
+            {
+                var item={"name":"Pepsi","vegnv":"nv","cost":"4"};
+            }
+            else if(pizzaType==9)
+            {
+                var item={"name":"Cinnamon sticks","vegnv":"nv","cost":"9"};
+            }
+            else if(pizzaType==3)
+            {
+                var item={"name":"Sprite","vegnv":"nv","cost":"3"};
+            }
+            else if(pizzaType==12)
+            {
+                var item={"name":"Bread sticks","vegnv":"nv","cost":"12"};
+            }
+            var cart= JSON.parse(sessionStorage.getItem("cart"));
+            if(cart==null)
+            {
+                cart=[item];
+                console.log(cart.length)
+                sessionStorage.setItem("cart",JSON.stringify(cart));
+            }
+            else
+            {
+                console.log("cart not empty");
+                cart.push(item);
+                sessionStorage.setItem("cart",JSON.stringify(cart));
+            }
+
+            console.log(JSON.parse((sessionStorage.getItem("cart"))));
+            displayCart();
+        };
+
+        function displayCart(){
+            if(JSON.parse(sessionStorage.getItem("cart"))!=null)
+            {
+                var itemNumber = JSON.parse(sessionStorage.getItem("cart")).length;
+                document.getElementById("itemNumber").innerHTML=itemNumber;
+                var cart= JSON.parse(sessionStorage.getItem("cart"));
+                var ul = document.getElementById("theCart");
+                ul.innerHTML = '';
+
+                for (var i=0;i<itemNumber;i++) {
+                    var ul = document.getElementById("theCart");
+                    var li = document.createElement("li");
+                    ul.appendChild(li);
+                    li.innerHTML = '<a href="">'+cart[i].name+'--$'+cart[i].cost+'</a>';
+                }
+
+                var li = document.createElement("li");
+                ul.appendChild(li);
+                li.innerHTML = '<div style="text-align: center;"><button type="button" class="btn btn-warning" onclick="checkOutPage()">Checkout</button></div>';
+
+            }
+            else
+            {
+                var ul = document.getElementById("theCart");
+                ul.innerHTML = '';
+                document.getElementById("itemNumber").innerHTML="";
+            }
+        }
+
+         function removeItem(item) {
+            if(JSON.parse(sessionStorage.getItem("cart"))!=null)
+            {
+                var itemNumber = JSON.parse(sessionStorage.getItem("cart")).length;
+                var cart= JSON.parse(sessionStorage.getItem("cart"));
+
+                for (var i=0;i<itemNumber;i++) {
+                    console.log(cart[i].name);
+                    console.log(item.name);
+                    if(!(item.name).localeCompare(cart[i].name))
+                    {
+                        cart.splice(i,1);
+                        sessionStorage.setItem("cart",JSON.stringify(cart));
+                        break;
+                    }
+                    else
+                    {
+
+                    }
+                }
+                $scope.cartItems=JSON.parse(sessionStorage.getItem("cart"));
+                displayCart();
+            }
+        };
+
+
+        function addEventListeners() {
+            $('.draggable-demo-product').mouseenter(function () {
+                $(this).children('.draggable-demo-product-price').fadeTo(100, 0.9);
+            });
+            $('.draggable-demo-product').mouseleave(function () {
+                $(this).children('.draggable-demo-product-price').fadeTo(100, 0);
+            });
+            $('.draggable-demo-product').bind('dropTargetEnter', function (event) {
+                $(event.args.target).css('border', '2px solid #000');
+                onCart = true;
+                $(this).jqxDragDrop('dropAction', 'none');
+            });
+            $('.draggable-demo-product').bind('dropTargetLeave', function (event) {
+                $(event.args.target).css('border', '2px solid #aaa');
+                onCart = false;
+                $(this).jqxDragDrop('dropAction', 'default');
+            });
+            $('.draggable-demo-product').bind('dragEnd', function (event) {
+                $('#cart').css('border', '2px dashed #aaa');
+                if (onCart) {
+                    addItem({ price: event.args.price, name: event.args.name });
+                    onCart = false;
+                }
+            });
+            $('.draggable-demo-product').bind('dragStart', function (event) {
+                var tshirt = $(this).find('.draggable-demo-product-header').text(),
+                        price = $(this).find('.draggable-demo-product-price').text().replace('Price: $', '');
+                $('#cart').css('border', '2px solid #aaa');
+                price = parseInt(price, 10);
+                $(this).jqxDragDrop('data', {
+                    price: price,
+                    name: tshirt
+                });
+            });
+        };
+
+        return {
+            init: init
+        }
+    } ($));
+
+    $(document).ready(function () {
+        cart.init();
+    });
+</script>
+</head>
+<body class='default'>
+<div  class="container"align="center">
+<h2 style="color:white;">SIDES</h2>
+<div id="shop" class="draggable-demo-shop jqx-rc-all">
+    <div id="catalog" class="draggable-demo-catalog jqx-rc-all"></div>
+    <div class="draggable-demo-cart-wrapper jqx-rc-all">
+        <div class="draggable-demo-title jqx-rc-t">Shopping Cart</br> Drag and Drop Here</div>
+        <div id='cart' class="draggable-demo-cart jqx-rc-all">
+            <div id="jqxgrid"></div>
+        </div>
+        <div class="draggable-demo-total"> <strong><span id="total"></span></strong></div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+</div>
+
+    <footer>
+
+        <div class="container" align="center">
+    
+        <div class="row">
+  			<div class="col-sm-6">
+  			<h3>ORDER</h3>
+  			<a href="#" ng-click="sidesPage()"><h4 style="color:grey;">Sides</h4></a>
+  			<a href="#" ng-click="pizzaPage()"><h4 style="color:grey;">Pizza</h4></a>
+  			<a href="#" ng-click="dealsPage()"><h4 style="color:grey;">Deals</h4></a>
+  			<a href="#" ng-click="buildYourOwnPage()"><h4 style="color:grey;">Build your Own</h4></a>
+  			</div>
+  			<div class="col-sm-6">
+  			<h3>ABOUT US</h3>
+  			<a href="#" ng-click="faqsPage()"><h4 style="color:grey;">FAQs</h4></a>
+  			<a href="#" ng-click="findUsPage()"><h4 style="color:grey;">Find Us</h4></a>
+  			<a href="#" ng-click="ourStoryPage()"><h4 style="color:grey;">Our Story</h4></a>
+  			<a href="#" ng-click="contactUsPage()"><h4 style="color:grey;">Contact Us</h4></a>
+  			</div>
+		</div>
+            </div>
+            
+            <p align="center">Copyright &copy; pizzalelopizza-pizzalelopizza.rhcloud.com</p>
+    </footer>
+    </div> <!-- ng-app -->
+    
+       <script>
+    	 function checkOutPage()
+       {
+             	window.location = '/checkOutPage';
+       }
+    function sidesController($scope,$http,$location) {
+    	displayCart();
+         
+           	function displayCart(){
+           	if(JSON.parse(sessionStorage.getItem("cart"))!=null)
+           	{
+           	var itemNumber = JSON.parse(sessionStorage.getItem("cart")).length;
+           	document.getElementById("itemNumber").innerHTML=itemNumber;
+           	var cart= JSON.parse(sessionStorage.getItem("cart"));
+           		var ul = document.getElementById("theCart");
+           		ul.innerHTML = '';
+           		
+           	for (var i=0;i<itemNumber;i++) {
+       	      	var ul = document.getElementById("theCart");
+       	    	var li = document.createElement("li");
+       	    	ul.appendChild(li);
+       	    	li.innerHTML = '<a href="">'+cart[i].name+'--$'+cart[i].cost+'</a>';
+       	       	}
+       	       	
+       	       	var li = document.createElement("li");
+       	    	ul.appendChild(li);
+       	    	li.innerHTML = '<div style="text-align: center;"><button type="button" class="btn btn-warning" onclick="checkOutPage()">Checkout</button></div>';
+       	    	
+       	       	}
+       	       	else
+       	       	{
+       	       	var ul = document.getElementById("theCart");
+    			ul.innerHTML = '';
+    			document.getElementById("itemNumber").innerHTML="";
+       	       	}
+       	}
+
+
+
+		$scope.homePage = function() {
+		window.location = '/index';
+		};
+		$scope.pizzaPage = function() {
+		window.location = '/pizzaPage';
+		};
+		$scope.buildYourOwnPage = function() {
+		window.location = '/buildYourOwnPage';
+		};
+		
+		$scope.sidesPage = function() {
+		window.location = '/sidesPage';
+		};
+		$scope.dealsPage = function() {
+		window.location = '/dealsPage';
+		};
+		$scope.findUsPage = function() {
+		window.location = '/findUsPage';
+		};
+		$scope.faqsPage = function() {
+		window.location = '/faqsPage';
+		};
+		$scope.ourStoryPage = function() {
+		window.location = '/ourStoryPage';
+		};
+		$scope.contactUsPage = function() {
+		window.location = '/contactUsPage';
+		};
+		}
+		</script>
+		
+		
+    </body>
+
+</html>

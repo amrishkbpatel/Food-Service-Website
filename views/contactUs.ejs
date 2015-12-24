@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pizzalelopizza a pizza ordering website where you can easily customize your pizza, located in many places in united states.">
+<meta name="author" content="CMPE280 Team10">
+<meta name="keyword" content="Pizzalelopizza, Creative, Pizza, Analytics, Food, Bootstrap, Responsive, Retina, Minimal">
+
+
+    <title>Pizza Lelo Pizza</title>
+	
+	<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	 -->
+	 
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/animate.css" rel="stylesheet" />
+	
+	 <!-- Squad theme CSS -->
+	<link href="css/styles_contact.css" rel="stylesheet">
+		
+	<!-- jQuery -->
+    <script src="js/jquery.js" defer></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js" defer></script>
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    	<!-- angular.js -->
+	 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	 <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	
+
+</head>
+
+<body>
+<div ng-app="" ng-controller="contactUsController">
+<header>
+    <div class="brand" >Pizza Lelo Pizza</div>
+    <div class="address-bar">Happy Pizzas To Make Happy Times</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Business Casual</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                 <li>
+                        <a href="#" ng-click="homePage()">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="pizzaPage()">PIZZA</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="buildYourOwnPage()">BUILD YOUR OWN</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="sidesPage()">SIDES</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="dealsPage()">DEALS</a>
+                    </li>
+                   <li>
+                        <a href="#" ng-click="findUsPage()">Find Us</a>
+                    </li>
+               <li class="dropdown">
+          	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart"></span> <span  id="itemNumber"></span><span class="caret"></span></a>
+         	<ul class="dropdown-menu" id="theCart" role="menu">
+            </ul>
+             </li>
+                </ul>
+              
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    </header>
+    <section id="contact" class="home-section text-center">
+	<div class="heading-contact">
+		<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<div class="wow bounceInDown" data-wow-delay="0.4s">
+				<div class="section-heading">
+				<h2 style="color:#fdcc3b;font-size:2em;">Get in touch</h2>
+				<i class="fa fa-2x fa-angle-down"style="color:#fdcc3b;"></i>
+
+				</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div class="container">
+
+	<div class="row">
+		<div class="col-lg-2 col-lg-offset-5">
+			<hr class="marginbot-50">
+		</div>
+	</div>
+<div class="row">
+    <div class="col-lg-8">
+        <div class="boxed-grey">
+            <form id="contact-form">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">
+                            Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">
+                            Email Address</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                            </span>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">
+                            Subject</label>
+                        <select id="subject" name="subject" class="form-control" required="required">
+                            <option value="na" selected="">Choose One:</option>
+                            <option value="service">General Customer Service</option>
+                            <option value="suggestions">Complaints</option>
+                            <option value="product">Delivery</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">
+                            Message</label>
+                        <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                            placeholder="Message"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-skin pull-right" ng-click="homePage" id="btnContactUs">
+                        Send Message</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+	
+	<div class="col-lg-4">
+		<div class="widget-contact">
+			<h5>Main Office</h5>
+			
+			<address style="color:white;">
+			  <strong style="color:white;">Pizza Lelo Pizza.</strong><br>
+			  Tower 795 Folsom Ave, Beautiful Suite 600<br>
+			  San Francisco, CA 94107<br>
+			  <abbr title="Phone"style="color:white;">P:</abbr> (123) 456-7890
+			</address>
+
+			<address>
+			  <strong style="color:white;">Email</strong><br>
+			  <a href="mailto:#">email.contactus@pizzalelopizza.com</a>
+			</address>	
+			<address>
+			  <strong style="color:white;">We're on social networks</strong><br>
+                   	<ul class="company-social">
+                        <li class="social-facebook"><a href="#" ng-click="homePage()"><i class="fa fa-facebook"></i></a></li>
+                        <li class="social-twitter"><a href="#" ng-click="homePage()"><i class="fa fa-twitter"></i></a></li>
+                        <li class="social-dribble"><a href="#" ng-click="homePage()"><i class="fa fa-dribbble"></i></a></li>
+                        <li class="social-google"><a href="#" ng-click="homePage()"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>	
+			</address>					
+		
+		</div>	
+	</div>
+</div>	
+
+	</div>
+	</section>
+    
+    <footer>
+
+        <div class="container" align="center">
+    
+        <div class="row">
+  			<div class="col-sm-6">
+  			<h3 style="color:black;">ORDER</h3>
+  			<a href="#" ng-click="sidesPage()"><h4 style="color:grey;">Sides</h4></a>
+  			<a href="#" ng-click="pizzaPage()"><h4 style="color:grey;">Pizza</h4></a>
+  			<a href="#" ng-click="dealsPage()"><h4 style="color:grey;">Deals</h4></a>
+  			<a href="#" ng-click="buildYourOwnPage()"><h4 style="color:grey;">Build your Own</h4></a>
+  			</div>
+  			<div class="col-sm-6">
+  			<h3 style="color:black;">ABOUT US</h3>
+  			<a href="#" ng-click="faqsPage()"><h4 style="color:grey;">FAQs</h4></a>
+  			<a href="#" ng-click="findUsPage()"><h4 style="color:grey;">Find Us</h4></a>
+  			<a href="#" ng-click="ourStoryPage()"><h4 style="color:grey;">Our Story</h4></a>
+  			<a href="#" ng-click="contactUsPage()"><h4 style="color:grey;">Contact Us</h4></a>
+  			</div>
+		</div>
+            </div>
+            
+            <p align="center">Copyright &copy; pizzalelopizza-pizzalelopizza.rhcloud.com</p>
+    </footer>
+    </div> <!-- ng-app -->
+    
+       <script defer>
+     function checkOutPage()
+       {
+             	window.location = '/checkOutPage';
+       }
+    function contactUsController($scope,$http,$location) {
+    		displayCart();
+         
+           	function displayCart(){
+           	if(JSON.parse(sessionStorage.getItem("cart"))!=null)
+           	{
+           	var itemNumber = JSON.parse(sessionStorage.getItem("cart")).length;
+           	document.getElementById("itemNumber").innerHTML=itemNumber;
+           	var cart= JSON.parse(sessionStorage.getItem("cart"));
+           		var ul = document.getElementById("theCart");
+           		ul.innerHTML = '';
+           		
+           	for (var i=0;i<itemNumber;i++) {
+       	      	var ul = document.getElementById("theCart");
+       	    	var li = document.createElement("li");
+       	    	ul.appendChild(li);
+       	    	li.innerHTML = '<a href="">'+cart[i].name+'--$'+cart[i].cost+'</a>';
+       	       	}
+       	       	
+       	       	var li = document.createElement("li");
+       	    	ul.appendChild(li);
+       	    	li.innerHTML = '<div style="text-align: center;"><button type="button" class="btn btn-warning" onclick="checkOutPage()">Checkout</button></div>';
+       	    	
+       	       	}
+       	       	else
+       	       	{
+       	       	var ul = document.getElementById("theCart");
+    			ul.innerHTML = '';
+    			document.getElementById("itemNumber").innerHTML="";
+       	       	}
+       	}
+           	
+		$scope.homePage = function() {
+		window.location = '/index';
+		};
+		$scope.pizzaPage = function() {
+		window.location = '/pizzaPage';
+		};
+		$scope.buildYourOwnPage = function() {
+		window.location = '/buildYourOwnPage';
+		};
+		
+		$scope.sidesPage = function() {
+		window.location = '/sidesPage';
+		};
+		$scope.dealsPage = function() {
+		window.location = '/dealsPage';
+		};
+		$scope.findUsPage = function() {
+		window.location = '/findUsPage';
+		};
+		$scope.faqsPage = function() {
+		window.location = '/faqsPage';
+		};
+		$scope.ourStoryPage = function() {
+		window.location = '/ourStoryPage';
+		};
+		$scope.contactUsPage = function() {
+		window.location = '/contactUsPage';
+		};
+		}
+		</script>
+		
+		<script src="js/jquery.min.js"></script>
+	    <script src="js/bootstrap.min.js"></script>
+	    <script src="js/jquery.easing.min.js"></script>	
+		<script src="js/jquery.scrollTo.js"></script>
+		<script src="js/wow.min.js"></script>
+	    <!-- Custom Theme JavaScript -->
+	    <script src="js/custom.js"></script>
+
+    </body>
+
+</html>

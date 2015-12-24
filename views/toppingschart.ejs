@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pizzalelopizza a pizza admin page to render analytics">
+    <meta name="author" content="CMPE280 Team10">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Pizza, Analytics, Food, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="admin/img/favicon.png">
+
+    <title>Popular Toppings</title>
+    
+    <!-- Bootstrap CSS -->    
+    <link href="admin/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="admin/css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="admin/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="admin/css/font-awesome.min.css" rel="stylesheet" />    
+    
+    <!-- Custom styles -->
+	<link rel="stylesheet" href="admin/css/fullcalendar.css">
+	<link href="admin/css/widgets.css" rel="stylesheet">
+    <link href="admin/css/style.css" rel="stylesheet">
+    <link href="admin/css/style-responsive.css" rel="stylesheet" />
+	<link href="admin/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <!--[if lt IE 9]>
+      <script src="admin/js/html5shiv.js"></script>
+      <script src="admin/js/respond.min.js"></script>
+      <script src="admin/js/lte-ie7.js"></script>
+    <![endif]-->
+    
+    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+  </head>
+
+  <body>
+  <div  ng-app="" ng-controller="personController">
+  <!-- container section start -->
+  <section id="container" class="">
+     
+      
+      <header class="header dark-bg">
+            <div class="toggle-nav">
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+            </div>
+
+            <!--logo start-->
+            <a href="" ng-click="dashboard()" class="logo">Pizza <span class="lite">Admin</span></a>
+            <!--logo end-->
+
+
+            <div class="top-nav notification-row">                
+                <!-- notificatoin dropdown start-->
+                <ul class="nav pull-right top-menu">
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="profile-ava">
+                                <img alt="" src="admin/img/avatar1_small.jpg">
+                            </span>
+                            <span class="username">Pizza Admin</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li>
+                                <a href="" ng-click="signOut()"><i class="icon_key_alt"></i> Log Out</a>
+                                <!-- input type="button" ng-click="signIn()" name="signin" value="Sign In" id="signin" tabindex="3" class="btn btn-primary btn-lg btn-block"-->
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!-- notificatoin dropdown end-->
+            </div>
+      </header>      
+      <!--header end-->
+
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu">                
+                  <li class="active">
+                      <a class="" href="" ng-click="dashboard()">
+                          <i class="icon_house_alt"></i>
+                          <span>Dashboard</span>
+                      </a>
+                  </li>
+                  <li>                     
+                      <a class="" href="" ng-click="toppingscharts()">
+                          <i class="icon_piechart"></i>
+                          <span>Popular Toppings</span>                          
+                      </a>                                         
+                  </li>
+                  <li>                     
+                      <a class="" href="" ng-click="vnvcharts()">
+                          <i class="icon_piechart"></i>
+                          <span>Veg vs Non-Veg</span>                          
+                      </a>                                         
+                  </li>
+                  <li>                     
+                      <a class="" href="" ng-click="crustcharts()">
+                          <i class="icon_piechart"></i>
+                          <span>Crust Popularity</span>                          
+                      </a>                                         
+                  </li>
+                  <li>                     
+                      <a class="" href="" ng-click="highMap()">
+                          <i class="icon_globe"></i>
+                          <span>Sales Map</span>                          
+                      </a>                                         
+                  </li>
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+
+      <!--main content start--> 
+     	<section id="main-content">
+        	<section class="wrapper"> 
+        		<div class="row">
+              		<div class="col-lg-12">    
+					<h2>Popular Toppings</h2>
+      					<div id="container1"></div>
+      				</div>
+      			</div>
+      		</section>
+      	</section>
+      <!--main content end-->
+      </section>
+  <!-- container section start -->
+  
+  </div>
+  </body>
+
+    <!-- javascripts -->
+    <script src="admin/js/jquery.js"></script>
+	<script src="admin/js/jquery-ui-1.10.4.min.js"></script>
+   <!--  <script src="admin/js/jquery-1.8.3.min.js"></script> -->
+    <script type="text/javascript" src="admin/js/jquery-ui-1.9.2.custom.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+    <!-- bootstrap -->
+    <script src="admin/js/bootstrap.min.js"></script>
+    <!-- nice scroll -->
+    <script src="admin/js/jquery.scrollTo.min.js"></script>
+    <script src="admin/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <!--custome script for all page-->
+    <script src="admin/js/scripts.js"></script>
+    
+  <script>
+  				//$(function () {
+		
+			    //$(document).ready(function () {
+			    function toppingfunction(tarray){
+			    	//console.log("1" + tarray);
+			    	var toppingArray= new Array();
+			    	for(i=1;i<tarray.length;i++)
+			    		toppingArray[i-1]=tarray[i];
+					//var toppingArray = tarray;
+					//console.log("2" + toppingArray);
+					/*[
+			                    ['Firefox',   20],
+			                    ['IE',       3],
+			                    ['Chrome', 2],
+			                    ['Safari',    5],
+			                    ['Opera',     6.2],
+			                    ['Others',   0.7]
+			                ];
+			                */
+			        // Build the chart
+			        $('#container1').highcharts({
+			            chart: {
+			                plotBackgroundColor: null,
+			                plotBorderWidth: null,
+			                plotShadow: false
+			            },
+			            title: {
+			                text: 'Popular pizza toppings of Pizzalelopizza store'
+			            },
+			            tooltip: {
+			                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+			            },
+			            plotOptions: {
+			                pie: {
+			                    allowPointSelect: true,
+			                    cursor: 'pointer',
+			                    dataLabels: {
+			                        enabled: false
+			                    },
+			                    showInLegend: true
+			                }
+			            },
+			            series: [{
+			                type: 'pie',
+			                name: 'Popular Toppings',
+			                data: toppingArray
+			            }]
+			        });
+			    }
+		
+			//});
+			
+			
+  		function personController($scope,$http,$location) {
+		    loadToppingData();
+  			function loadToppingData(){
+				//alert("hi2");
+		    	$http({
+		    		method: 'Get',
+		            url: '/getToppingsData',
+		         }).success(function(response){
+		         		var jsononions = JSON.parse(response.Onions);
+		         		var jsonmush = JSON.parse(response.Mushrooms);
+		         		var jsonpop = JSON.parse(response.Pepperoni);
+		         		var jsonham = JSON.parse(response.Ham);
+		         		var jsonbac = JSON.parse(response.Bacon);
+		         		var jsonpin = JSON.parse(response.Pineapple);
+		         		var jsonoli = JSON.parse(response.Olives);
+		         		var jsontom = JSON.parse(response.Tomatoes);
+		         		var jsonjal = JSON.parse(response.Jalapeno);
+		         		var jsonGP = JSON.parse(response.GreenPeppers);
+		         		var jsonches = JSON.parse(response.Cheese);
+		         		//console.log(jsononions);
+		         		//console.log(jsonham);
+		         		var arr = [['Ingredients','Quantity']];
+		         		arr.push(['Onions',jsononions[0].Onions]);
+		         		arr.push(['Mushrooms',jsonmush[0].Mushrooms]);
+		         		arr.push(['Pepperoni',jsonpop[0].Pepperoni]);
+		         		arr.push(['Ham',jsonham[0].Ham]);
+		         		arr.push(['Bacon',jsonbac[0].Bacon]);
+		         		arr.push(['Pineapple',jsonpin[0].Pineapple]);
+		         		arr.push(['Olives',jsonoli[0].Olives]);
+		         		arr.push(['Tomatoes',jsontom[0].Tomatoes]);
+		         		arr.push(['Jalapeno',jsonjal[0].Jalapeno]);
+		         		arr.push(['GreenPeppers',jsonGP[0].GreenPeppers]);
+		         		arr.push(['Cheese',jsonches[0].Cheese]);
+		         		//console.log(arr[3]);
+		         		//$scope.tarray = arr;
+		         		toppingfunction(arr);
+		            }).error(function(error){
+		            alert("error");
+		        });
+		    };
+		    
+			$scope.signOut = function() {
+				$http({
+				  	url: '/signout', 
+				  	method: "GET",
+				 	}).success(function(response){
+					           
+					            //alert(JSON.stringify(response));
+					            window.location = '/signin';
+					          
+					        }).error(function(error){
+					            alert("error");
+					        });
+					};
+					
+			$scope.highMap = function() {
+				$http({
+				  	url: '/highmap', 
+				  	method: "GET",
+				 	}).success(function(response){
+					           
+					            //alert(JSON.stringify(response));
+					            window.location = '/highmap';
+					          
+					        }).error(function(error){
+					            alert("error");
+					        });
+					};
+					
+			$scope.vnvcharts = function() {
+				$http({
+				  	url: '/vegnonvegchart', 
+				  	method: "GET",
+				 	}).success(function(response){
+					           
+					            //alert(JSON.stringify(response));
+					            window.location = '/vegnonvegchart';
+					          
+					        }).error(function(error){
+					            alert("error");
+					        });
+					};
+					
+			$scope.toppingscharts = function() {
+				$http({
+				  	url: '/populartoppings', 
+				  	method: "GET",
+				 	}).success(function(response){
+					           
+					            //alert(JSON.stringify(response));
+					            window.location = '/populartoppings';
+					          
+					        }).error(function(error){
+					            alert("error");
+					        });
+					};
+					
+			$scope.crustcharts = function() {
+				$http({
+				  	url: '/crustchart', 
+				  	method: "GET",
+				 	}).success(function(response){
+					           
+					            //alert(JSON.stringify(response));
+					            window.location = '/crustchart';
+					          
+					        }).error(function(error){
+					            alert("error");
+					        });
+					};
+					
+					
+			$scope.dashboard = function() {
+				$http({
+				  	url: '/dashboard', 
+				  	method: "GET",
+				 	}).success(function(response){
+					           
+					            //alert(JSON.stringify(response));
+					            window.location = '/dashboard';
+					          
+					        }).error(function(error){
+					            alert("error");
+					        });
+					};		
+			
+		}
+
+
+  </script>
+  
+</html>

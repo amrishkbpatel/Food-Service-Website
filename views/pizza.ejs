@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pizzalelopizza a pizza ordering website where you can easily customize your pizza, located in many places in united states.">
+<meta name="author" content="CMPE280 Team10">
+<meta name="keyword" content="Pizzalelopizza, Creative, Pizza, Analytics, Food, Bootstrap, Responsive, Retina, Minimal">
+<link rel="shortcut icon" href="img/favicon.png">
+
+    <title>Pizza Lelo Pizza</title>
+	
+	<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	 -->
+	 
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+
+	<!-- jQuery -->
+    <script src="js/jquery.js" defer></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js" defer></script>
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    	<!-- angular.js -->
+	 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	 <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	
+
+</head>
+
+<body>
+<div ng-app="" ng-controller="pizzaController">
+<header>
+    <div class="brand">Pizza Lelo Pizza</div>
+   	<div class="address-bar">Happy Pizzas To Make Happy Times</div>
+	  
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Pizza Lelo Pizza</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                 <li>
+                        <a href="#" ng-click="homePage()">HOME</a>
+                    </li>
+                    <li class="active">
+                        <a href="#" ng-click="pizzaPage()">PIZZA</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="buildYourOwnPage()">BUILD YOUR OWN</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="sidesPage()">SIDES</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="dealsPage()">DEALS</a>
+                    </li>
+                   <li>
+                        <a href="#" ng-click="findUsPage()">Find Us</a>
+                    </li>
+                <li class="dropdown">
+                
+          	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart"></span><span  id="itemNumber"></span> <span class="caret"></span></a>
+         	<ul class="dropdown-menu" role="menu"  id="theCart" style="color:grey;padding-left:0.2cm;">
+           </ul>
+		 	</li>
+            </ul>
+               
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    
+    <div class="container" align="center">
+	<h2 style="color:white;">PIZZAZ</h2>
+     <img src="img/pizza.jpg" width="700" height="350" alt="">
+    </div>
+    <br>
+    
+      <div class="container" align="center">
+      <div class="row">
+      
+  			<div class="col-sm-6" style="color:#fdcc3b; border:3px solid #d4a26f ;">
+  			<br>
+  			<figure>
+  			<img  align="left" src="img/veg.jpg" width="200" height="100" alt="">
+  			<h4>VEGGIE LOVER</h4>
+  			<figcaption style="font-size: 1.20em;color:white">Classic marinara sauce, fresh mushrooms, fresh red onions, fresh green bell peppers, Roma tomatoes and black olives.</figcaption>
+			</figure>	
+			<br>
+			
+<div style="padding-right:10px;float:left;">
+<select style="border-radius: 25px;border:3px solid;color:grey;text-indent:2px;font-weight:bold" id="p1">
+  <option value="Pan Pizza">Pan Pizza</option>
+  <option value="Hand Tossed">Hand Tossed Pizza</option>
+  <option value="Cheesy Crust">Cheesy Crust</option>
+  <option value="Thin Crispy">Thin & Crispy</option>
+</select>
+</div>
+
+<div style="float:left;">
+<select style="border-radius: 25px;border:3px solid;color:grey;text-indent:2px;font-weight:bold" id="ps1">
+  <option value="Large">Large</option>
+  <option value="Medium">Medium</option>
+  <option value="Small">Small</option>
+</select>
+</div>		
+<span style="float:left;padding-left:0.5cm;font-size:170%;color:white;"><strong>$9.99</strong></span>	
+			<button type="button" class="btn btn-warning" ng-click="addOrder(1)">Add to Order</button>
+			<br><br>
+  			</div>
+  				
+  					
+  			<div class="col-sm-6" style="color:#fdcc3b; border:3px solid #d4a26f ;">
+  			<br>
+  			<figure>
+  			<img  align="left" src="img/cheese.jpg" width="200" height="100" alt="">
+  			<h4>CHEESE LOVER</h4>
+  			<figcaption style="font-size: 1.20em;color:white">Creamy garlic Parmesan sauce topped with 50% more cheese than our standard recipes flavored with Parmesan.</figcaption>
+			</figure>	
+			<br>
+			
+<div style="padding-right:10px;float:left;">
+<select style="border-radius: 25px;border:3px solid;color:grey;text-indent:2px;font-weight:bold" id="p2">
+  <option value="Pan Pizza">Pan Pizza</option>
+  <option value="Hand Tossed">Hand Tossed Pizza</option>
+  <option value="Cheesy Crust">Cheesy Crust</option>
+  <option value="Thin Crispy">Thin & Crispy</option>
+</select>
+</div>
+
+<div style="float:left;">
+<select style="border-radius: 25px;border:3px solid;color:grey;text-indent:2px;font-weight:bold" id="ps2">
+  <option value="Large">Large</option>
+  <option value="Medium">Medium</option>
+  <option value="Small">Small</option>
+</select>
+</div>	
+			<span style="float:left;padding-left:0.5cm;font-size:170%;color:white;"><strong>$15.99</strong></span>		
+			<button type="button" class="btn btn-warning" ng-click="addOrder(2)">Add to Order</button>
+			<br><br>
+  			</div>
+  	
+  			</div>
+  			
+  			
+  			      <div class="row">
+      
+  			<div class="col-sm-6" style="color:#fdcc3b; border:3px solid #d4a26f ;">
+  			<br>
+  			<figure>
+  			<img  align="left" src="img/pepperoni.jpg" width="200" height="100" alt="">
+  			<h4>PEPPERONI LOVER</h4>
+  			<figcaption style="font-size: 1.20em;color:white">Classic marinara sauce topped with 50% more cheese, sweet red onions, fresh white mushrooms and extra pepperoni.</figcaption>
+			</figure>	
+			<br>
+			
+<div style="padding-right:10px;float:left;">
+<select style="border-radius: 25px;border:3px solid;color:grey;text-indent:2px;font-weight:bold" id="p3">
+  <option value="Pan Pizza">Pan Pizza</option>
+  <option value="Hand Tossed">Hand Tossed Pizza</option>
+  <option value="Cheesy Crust">Cheesy Crust</option>
+  <option value="Thin Crispy">Thin & Crispy</option>
+</select>
+</div>
+
+<div style="float:left;">
+<select style="border-radius: 25px;border:3px solid;color:grey;text-indent:2px;font-weight:bold" id="ps3">
+  <option value="Large">Large</option>
+  <option value="Medium">Medium</option>
+  <option value="Small">Small</option>
+</select>
+</div>		
+<span style="float:left;padding-left:0.5cm;font-size:170%;color:white;"><strong>$16.99</strong></span>	
+			<button type="button" class="btn btn-warning" ng-click="addOrder(3)">Add to Order</button>
+			<br><br>
+  			</div>
+  					
+  			<div class="col-sm-6" style="color:#fdcc3b; border:3px solid #d4a26f ;">
+  			<br>
+  			<figure>
+  			<img  align="left" src="img/hawaiian.jpg" width="200" height="100" alt="">
+  			<h4>HAWAIIAN LOVER</h4>
+  			<figcaption style="font-size: 1.20em;color:white">An Island Escape: Slow-roasted ham, tropical pineapple, and smoked bacon flavored up with toasted cheddar.</figcaption>
+			</figure>	
+			<br>
+			
+<div style="padding-right:10px;float:left;">
+<select style="border-radius: 25px;border:3px solid;color:grey;text-indent:2px;font-weight:bold" id="p4">
+  <option value="Pan Pizza">Pan Pizza</option>
+  <option value="Hand Tossed">Hand Tossed Pizza</option>
+  <option value="Cheesy Crust">Cheesy Crust</option>
+  <option value="Thin Crispy">Thin & Crispy</option>
+</select>
+</div>
+
+<div style="float:left;">
+<select style="border-radius: 25px;border:3px solid;color:grey;text-indent:2px;font-weight:bold" id="ps4">
+  <option value="Large">Large</option>
+  <option value="Medium">Medium</option>
+  <option value="Small">Small</option>
+</select>
+</div>		
+<span style="float:left;padding-left:0.5cm;font-size:170%;color:white;"><strong>$14.99</strong></span>	
+			<button type="button" class="btn btn-warning" ng-click="addOrder(4)">Add to Order</button>
+			<br><br>
+  			</div>
+  			
+  			</div>
+  			</div>
+    
+    
+    
+    </header>
+    <br><br>
+    <footer>
+
+        <div class="container" align="center">
+    
+        <div class="row">
+  			<div class="col-sm-6">
+  			<h3>ORDER</h3>
+  			<a href="#" ng-click="sidesPage()"><h4 style="color:grey;">Sides</h4></a>
+  			<a href="#" ng-click="pizzaPage()"><h4 style="color:grey;">Pizza</h4></a>
+  			<a href="#" ng-click="dealsPage()"><h4 style="color:grey;">Deals</h4></a>
+  			<a href="#" ng-click="buildYourOwnPage()"><h4 style="color:grey;">Build your Own</h4></a>
+  			</div>
+  			<div class="col-sm-6">
+  			<h3>ABOUT US</h3>
+  			<a href="#" ng-click="faqsPage()"><h4 style="color:grey;">FAQs</h4></a>
+  			<a href="#" ng-click="findUsPage()"><h4 style="color:grey;">Find Us</h4></a>
+  			<a href="#" ng-click="ourStoryPage()"><h4 style="color:grey;">Our Story</h4></a>
+  			<a href="#" ng-click="contactUsPage()"><h4 style="color:grey;">Contact Us</h4></a>
+  			</div>
+		</div>
+            </div>
+            
+            <p align="center">Copyright &copy; pizzalelopizza-pizzalelopizza.rhcloud.com</p>
+    </footer>
+ 
+    
+       <script>
+       function checkOutPage()
+       {
+             	window.location = '/checkOutPage';
+       }
+        function pizzaController($scope,$http,$location) {
+         		displayCart();
+         
+           	function displayCart(){
+           	if(JSON.parse(sessionStorage.getItem("cart"))!=null)
+           	{
+           	var itemNumber = JSON.parse(sessionStorage.getItem("cart")).length;
+           	document.getElementById("itemNumber").innerHTML=itemNumber;
+           	var cart= JSON.parse(sessionStorage.getItem("cart"));
+           		var ul = document.getElementById("theCart");
+           		ul.innerHTML = '';
+           		
+           	for (var i=0;i<itemNumber;i++) {
+       	      	var ul = document.getElementById("theCart");
+       	    	var li = document.createElement("li");
+       	    	ul.appendChild(li);
+       	    	li.innerHTML = '<a href="">'+cart[i].name+'--$'+cart[i].cost+'</a>';
+       	       	}
+       	       	
+       	       	var li = document.createElement("li");
+       	    	ul.appendChild(li);
+       	    	li.innerHTML = '<div style="text-align: center;"><button type="button" class="btn btn-warning" onclick="checkOutPage()">Checkout</button></div>';
+       	    	
+       	       	}
+       	       	else
+       	       	{
+       	       	var ul = document.getElementById("theCart");
+    			ul.innerHTML = '';
+    			document.getElementById("itemNumber").innerHTML="";
+       	       	}
+       	}
+           	
+           	$scope.addOrder= function(pizzaType) {
+           	if(pizzaType==1)
+           	{
+           	var item={"name":"Veggie Lover","vegnv":"v","crust":document.getElementById("p1").value,"side":"","cost":"9.99","topping1":"Mushrooms","topping2":"Onions","topping3":"GreenPeppers","topping4":"Tomatoes","topping5":"Olives","topping6":"","topping7":"","topping8":"","size":document.getElementById("ps2").value};
+           	}
+           	else if(pizzaType==2)
+           	{
+           	var item={"name":"Cheese Lover","crust":document.getElementById("p2").value,"vegnv":"v","side":"","cost":"15.99","topping1":"Cheese","topping2":"","topping3":"","topping4":"","topping5":"","topping6":"","topping7":"","topping8":"","size":document.getElementById("ps2").value};
+           	}
+           	else if(pizzaType==3)
+           	{
+           	var item={"name":"Pepperoni Lover","crust":document.getElementById("p3").value,"vegnv":"nv","side":"","cost":"16.99","topping1":"Cheese","topping2":"Onions","topping3":"Mushrooms","topping4":"Pepperoni","topping5":"","topping6":"","topping7":"","topping8":"","size":document.getElementById("ps3").value};
+           	}
+           	else if(pizzaType==4)
+           	{
+           	var item={"name":"Hawaiian Lover","crust":document.getElementById("p4").value,"vegnv":"nv","side":"","cost":"14.99","topping1":"Ham","topping2":"Pineapple","topping3":"Bacon","topping4":"Cheddar","topping5":"","topping6":"","topping7":"","topping8":"","size":document.getElementById("ps4").value};
+           	}
+             	var cart= JSON.parse(sessionStorage.getItem("cart"));
+       	if(cart==null)
+       		{
+       		cart=[item];
+       		console.log(cart.length)
+       		sessionStorage.setItem("cart",JSON.stringify(cart));
+       		}
+       		else
+       		{
+       		console.log("cart not empty");
+       		cart.push(item);
+       		sessionStorage.setItem("cart",JSON.stringify(cart));
+       		}
+       	
+       		 console.log(JSON.parse((sessionStorage.getItem("cart"))));
+       		 displayCart();
+       		};
+           	
+       
+       		$scope.homePage = function() {
+       		window.location = '/index';
+       		};
+       		$scope.pizzaPage = function() {
+       		window.location = '/pizzaPage';
+       		};
+       		$scope.buildYourOwnPage = function() {
+       		window.location = '/buildYourOwnPage';
+       		};
+       		
+       		$scope.sidesPage = function() {
+       		window.location = '/sidesPage';
+       		};
+       		$scope.dealsPage = function() {
+       		window.location = '/dealsPage';
+       		};
+       		$scope.findUsPage = function() {
+       		window.location = '/findUsPage';
+       		};
+       		$scope.faqsPage = function() {
+       		window.location = '/faqsPage';
+       		};
+       		$scope.ourStoryPage = function() {
+       		window.location = '/ourStoryPage';
+       		};
+       		$scope.contactUsPage = function() {
+       		window.location = '/contactUsPage';
+       		};
+       		}
+       		</script>
+		
+	   </div> <!-- ng-app -->
+    </body>
+
+</html>
