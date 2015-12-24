@@ -39,3 +39,8 @@ http://pizzalelopizza-pizzalelopizza.rhcloud.com/
 ![alt text](public/img/wireframes/wireframeCheckout.png "Check Out page")
 ![alt text](public/img/wireframes/wireframeFinfus.png "Loaction page")
 
+# Appendix
+This is a school project (non-commercial)
+Thanks to
+* https://www.openshift.com/
+* [JQwidgets] (http://www.jqwidgets.com/license/)
